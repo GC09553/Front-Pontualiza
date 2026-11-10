@@ -1,0 +1,262 @@
+/* Estrutura de tela inteira sem barras pretas */
+.container-tela {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f4f8fb;
+}
+
+/* Coluna Esquerda Azul */
+.coluna-esquerda {
+  flex: 0 0 32%;
+  min-width: 380px;
+  background: radial-gradient(circle at 10% 20%, #0088cc 0%, #005f9e 60%, #004578 100%);
+  color: #ffffff;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-logo {
+ background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 18px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.img-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
+
+.placeholder-logo h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0077b6;
+  margin-bottom: 2px;
+}
+
+.placeholder-logo small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #718096;
+  font-weight: 600;
+}
+
+.texto-destaque {
+  margin: 30px 0;
+}
+
+.texto-destaque h1 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.texto-destaque p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-beneficio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Coluna Direita (Área do Formulário) */
+.coluna-direita {
+  flex: 1;
+  background-color: #f4f8fb;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.topo-formulario {
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.badge-topo {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0077b6;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.topo-formulario h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 6px 0 8px 0;
+}
+
+.topo-formulario p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Card Branco do Formulário */
+.card-formulario {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 620px;
+  padding: 32px 36px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.secao-convite {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #f0f7ff;
+  border: 1px solid #dbeafe;
+  padding: 16px 20px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.icone-convite {
+  font-size: 22px;
+}
+
+.secao-convite strong {
+  font-size: 14px;
+  color: #1e293b;
+  display: block;
+}
+
+.secao-convite p {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.titulo-secao {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 24px 0 16px 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Força os inputs a terem fundo branco e texto legível */
+.campo input {
+  height: 44px;
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.campo input::placeholder {
+  color: #94a3b8;
+}
+
+.campo input:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.12);
+}
+
+.aviso-campo {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.linha-dupla {
+  display: flex;
+  gap: 16px;
+}
+
+.linha-dupla .campo {
+  flex: 1;
+}
+
+.aviso-obrigatorio {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 12px 0 20px 0;
+}
+
+.btn-ativar {
+  width: 100%;
+  height: 48px;
+  background-color: #0077b6;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-ativar:hover {
+  background-color: #005f92;
+}
+
+.rodape-formulario {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.rodape-formulario p {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.rodape-formulario a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rodape-formulario small {
+  font-size: 12px;
+  color: #94a3b8;
+}
