@@ -10,7 +10,11 @@ function CheckIcon() {
   );
 }
 
-function RoleIcon({ administrator = false }) {
+interface RoleIconProps {
+  administrator?: boolean
+}
+
+function RoleIcon({ administrator = false }: RoleIconProps) {
   return (
     <span className={`role-icon${administrator ? ' role-icon-admin' : ''}`} aria-hidden="true">
       {administrator ? (
@@ -37,7 +41,11 @@ function InfoIcon() {
   );
 }
 
-function AccessCard({ administrator = false }) {
+interface AccessCardProps {
+  administrator?: boolean
+}
+
+function AccessCard({ administrator = false }: AccessCardProps) {
   const role = administrator ? 'Administrador' : 'Funcionário';
 
   return (
