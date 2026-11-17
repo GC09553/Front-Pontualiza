@@ -1,6 +1,6 @@
 import './styles.css'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <main className="home-page">
       <h1>Home</h1>
