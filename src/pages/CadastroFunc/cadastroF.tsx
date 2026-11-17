@@ -1,7 +1,7 @@
 import './style.css';
 import LogoPontualiza from '../../assets/logo.jpeg';
 
-export function CadastroFunc() {
+export default function CadastroFunc() {
   return (
     <div className="container-tela">
       {/* Coluna Esquerda: Branding e Informações */}
@@ -9,9 +9,7 @@ export function CadastroFunc() {
         <div className="card-logo">
           {/* Deixaremos um espaço reservado para a logo */}
           <img src={LogoPontualiza} alt="Logo Pontualiza" className="img-logo" />
-  </div>
-    
-
+        </div>
 
         <div className="texto-destaque">
           <h1>Sua equipe, conectada desde o primeiro dia.</h1>
@@ -44,7 +42,7 @@ export function CadastroFunc() {
             {/* Bloco 1: Convite */}
             <div className="secao-convite">
               <span className="icone-convite">📱</span>
-              <div>í
+              <div>
                 <strong>Convite autorizado</strong>
                 <p>Use o link ou código enviado pelo gestor para ativar seu acesso.</p>
               </div>
@@ -107,5 +105,3 @@ export function CadastroFunc() {
     </div>
   );
 }
-
-export default CadastroFunc;

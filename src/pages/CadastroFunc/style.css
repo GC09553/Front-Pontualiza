@@ -15,11 +15,11 @@
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .card-logo {
- background: #ffffff;
+  background: #ffffff;
   padding: 16px 20px;
   border-radius: 18px;
   width: fit-content;
@@ -35,30 +35,16 @@
   display: block;
 }
 
-
-.placeholder-logo h2 {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #0077b6;
-  margin-bottom: 2px;
-}
-
-.placeholder-logo small {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #718096;
-  font-weight: 600;
-}
-
 .texto-destaque {
-  margin: 30px 0;
+  margin-top: 28px;
+  margin-bottom: 0;
 }
 
 .texto-destaque h1 {
   font-size: 38px;
   font-weight: 700;
   line-height: 1.25;
+  margin-top: 0;
   margin-bottom: 16px;
   color: #ffffff;
 }
@@ -70,6 +56,8 @@
 }
 
 .beneficios {
+  margin-top: auto;
+  padding-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -84,7 +72,7 @@
   color: #ffffff;
 }
 
-/* Coluna Direita (Área do Formulário) */
+/* Coluna Direita (Área do Formulário - */
 .coluna-direita {
   flex: 1;
   background-color: #f4f8fb;
