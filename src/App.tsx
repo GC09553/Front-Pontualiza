@@ -8,11 +8,21 @@
   //)
 //}
 
-import CadastroFunc from './pages/CadastroFunc/cadastroF';
+//import CadastroFunc from './pages/CadastroFunc/cadastroF';
+
+//function App() {
+ // return (
+   // <CadastroFunc />
+ // );
+//}
+
+//export default App;
+
+import CadastroEmp from './pages/CadastroEmp/cadastroE';
 
 function App() {
   return (
-    <CadastroFunc />
+    <CadastroEmp />
   );
 }
 
