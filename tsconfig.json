@@ -1,25 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "target": "ES2020",
+    "module": "NodeNext",
     "lib": ["ES2023", "DOM"],
-    "jsx": "react-jsx",
-    "types": ["vite/client"],
+    "types": [],
     "allowArbitraryExtensions": true,
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "esModuleInterop": true,
     "jsx": "react-jsx",
-
-    /* Linting */
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection":"force",
+    "skipLibCheck":true,
   },
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.spec.ts"]
 }
