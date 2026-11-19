@@ -1,0 +1,69 @@
+.coluna-esquerda {
+  flex: 0 0 32%;
+  min-width: 360px;
+  background: radial-gradient(circle at 10% 20%, #0088cc 0%, #005f9e 60%, #004578 100%);
+  color: #ffffff;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-logo {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 18px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.img-logo {
+  max-width: 240px;
+  height: auto;
+  display: block;
+}
+
+.texto-destaque {
+  margin-top: 32px;
+}
+
+.texto-destaque h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+}
+
+.texto-destaque p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.beneficios {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.item-beneficio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.icone-check {
+  font-size: 14px;
+  opacity: 0.9;
+}
