@@ -1,29 +1,23 @@
-//import React from 'react'
-
-//export default function App() {
-  //return (
-    //<main style={{ fontFamily: 'sans-serif', padding: '2rem', textAlign: 'center' }}>
-      //<h1>Pontualiza</h1>
-    //</main>
-  //)
-//}
-
-//import CadastroFunc from './pages/CadastroFunc/cadastroF';
-
-//function App() {
- // return (
-   // <CadastroFunc />
- // );
-//}
-
-//export default App;
-
+import { useState } from 'react';
+import Login from './pages/Login/Login';
+import CadastroFunc from './pages/CadastroFunc/cadastroF';
 import CadastroEmp from './pages/CadastroEmp/cadastroE';
 
-function App() {
+type Rota = 'login' | 'cadastroFunc' | 'cadastroEmp';
+
+export default function App() {
+  const [telaAtual, setTelaAtual] = useState<Rota>('login');
+
+  const navegarPara = (rota: string) => {
+    setTelaAtual(rota as Rota);
+    window.scrollTo(0, 0); // Sobe a rolagem ao trocar de tela
+  };
+
   return (
-    <CadastroEmp />
+    <>
+      {telaAtual === 'login' && <Login onNavigate={navegarPara} />}
+      {telaAtual === 'cadastroFunc' && <CadastroFunc onNavigate={navegarPara} />}
+      {telaAtual === 'cadastroEmp' && <CadastroEmp onNavigate={navegarPara} />}
+    </>
   );
 }
-
-export default App;

@@ -235,3 +235,45 @@
   font-size: 12px;
   color: #94a3b8;
 }
+
+@media (max-width: 900px) {
+  .coluna-direita-emp {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 16px 40px 16px;
+  }
+
+  .barra-superior-emp {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topo-formulario-emp h2 {
+    font-size: 24px;
+  }
+
+  .card-formulario-emp {
+    box-sizing: border-box;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .linha-dupla-emp {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .caixa-icone-verde {
+    flex-shrink: 0;
+  }
+
+  .checkbox-termos {
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .checkbox-termos input {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+}

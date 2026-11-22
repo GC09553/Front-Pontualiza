@@ -10,8 +10,8 @@
 }
 
 .card-logo {
-  background: #ffffff;
-  padding: 16px 20px;
+  background-color: #ffffff;
+  padding: 20px 28px;
   border-radius: 18px;
   width: fit-content;
   display: flex;
@@ -21,13 +21,13 @@
 }
 
 .img-logo {
-  max-width: 240px;
+  max-width: 220px;
   height: auto;
   display: block;
 }
 
 .texto-destaque {
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .texto-destaque h1 {
@@ -43,6 +43,7 @@
   line-height: 1.5;
   color: #e2e8f0;
   margin: 0;
+  max-width: 310px;
 }
 
 .beneficios {
@@ -50,20 +51,69 @@
   padding-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .item-beneficio {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   font-size: 14px;
   font-weight: 500;
   color: #ffffff;
 }
 
-.icone-check {
-  font-size: 14px;
+.icone-beneficio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.9;
+}
+/* Responsividade para Tablet e Celular */
+@media (max-width: 900px) {
+  .coluna-esquerda {
+    flex: none;
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 32px 24px;
+  }
+
+  .card-logo {
+    padding: 12px 18px;
+  }
+
+  .img-logo {
+    max-width: 160px;
+  }
+
+  .texto-destaque {
+    margin-top: 24px;
+  }
+
+  .texto-destaque h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .texto-destaque p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  /* No celular, coloca os 3 benefícios lado a lado para não alongar demais a página */
+  .beneficios {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .item-beneficio {
+    font-size: 13px;
+    gap: 8px;
+  }
 }
