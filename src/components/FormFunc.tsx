@@ -1,6 +1,10 @@
 import './FormFunc.css';
 
-export default function FormularioFunc() {
+interface FormularioFuncProps {
+  onNavigate?: (rota: string) => void;
+}
+
+export default function FormularioFunc({ onNavigate }: FormularioFuncProps) {
   return (
     <main className="coluna-direita">
       <div className="topo-formulario">
@@ -60,7 +64,7 @@ export default function FormularioFunc() {
           </div>
 
           <small className="aviso-obrigatorio">
-            * Campos obrigatórios · 8+ caracteres, maiúsculas, minúsculas, número e símbolo.
+            - Campos obrigatórios · 8+ caracteres, maiúsculas, minúsculas, número e símbolo.
           </small>
 
           <button type="button" className="btn-ativar">
@@ -72,7 +76,15 @@ export default function FormularioFunc() {
 
       <footer className="rodape-formulario">
         <p>Já possui conta como funcionário?</p>
-        <a href="#">Entrar</a>
+        <a
+          href="#login"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate('login');
+          }}
+        >
+          Entrar
+        </a>
         <small>© 2026 Pontualiza · Privacidade e segurança</small>
       </footer>
     </main>

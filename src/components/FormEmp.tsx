@@ -1,13 +1,26 @@
 import { useState } from 'react';
 import './FormEmp.css';
 
-export default function FormEmp() {
+interface FormEmpProps {
+  onNavigate?: (rota: string) => void;
+}
+
+export default function FormEmp({ onNavigate }: FormEmpProps) {
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   return (
     <main className="coluna-direita-emp">
       <div className="barra-superior-emp">
-        <a href="#" className="link-voltar">← Voltar ao portal</a>
+        <a
+          href="#login"
+          className="link-voltar"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate('login');
+          }}
+        >
+          ← Voltar ao portal
+        </a>
         <div className="status-topo-emp">
           <span className="bolinha-verde"></span>
           <span className="badge-verde">CADASTRO INICIAL</span>
@@ -97,8 +110,6 @@ export default function FormEmp() {
             </div>
           </div>
 
-         
-
           <small className="aviso-senha-emp">
             Use letras maiúsculas, minúsculas, números e um caractere especial.
           </small>
@@ -120,7 +131,15 @@ export default function FormEmp() {
 
       <footer className="rodape-formulario-emp">
         <p>Já possui conta como administrador?</p>
-        <a href="#">Entrar</a>
+        <a
+          href="#login"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate('login');
+          }}
+        >
+          Entrar
+        </a>
         <small>© 2026 Pontualiza · Privacidade e segurança</small>
       </footer>
     </main>
