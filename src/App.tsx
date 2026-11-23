@@ -1,43 +1,55 @@
-
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import PortalPontualiza from './pages/Home/telaInicial/tela.js';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import CadastroFunc from './pages/CadastroFunc/cadastroF';
+import CadastroEmp from './pages/CadastroEmp/cadastroE';
 import { HomeFuncionario } from './pages/HomeFuncionario';
 import { HomeAdmin } from './pages/HomeAdmin';
 
-export function App() {
+function LoginWrapper() {
+  const navigate = useNavigate();
+  const navegarPara = (rota: string) => {
+    const mapaRotas: Record<string, string> = {
+      login: '/',
+      cadastroFunc: '/cadastro-funcionario',
+      cadastroEmp: '/cadastro-empresa',
+      funcionario: '/funcionario',
+      admin: '/admin',
+    };
+    navigate(mapaRotas[rota] || '/');
+    window.scrollTo(0, 0);
+  };
+  return <Login onNavigate={navegarPara} />;
+}
+
+function CadastroFuncWrapper() {
+  const navigate = useNavigate();
+  const navegarPara = (rota: string) => {
+    navigate(rota === 'login' ? '/' : `/${rota}`);
+    window.scrollTo(0, 0);
+  };
+  return <CadastroFunc onNavigate={navegarPara} />;
+}
+
+function CadastroEmpWrapper() {
+  const navigate = useNavigate();
+  const navegarPara = (rota: string) => {
+    navigate(rota === 'login' ? '/' : `/${rota}`);
+    window.scrollTo(0, 0);
+  };
+  return <CadastroEmp onNavigate={navegarPara} />;
+}
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PortalPontualiza />} />
+        <Route path="/" element={<LoginWrapper />} />
+        <Route path="/cadastro-funcionario" element={<CadastroFuncWrapper />} />
+        <Route path="/cadastro-empresa" element={<CadastroEmpWrapper />} />
         <Route path="/funcionario" element={<HomeFuncionario />} />
         <Route path="/admin" element={<HomeAdmin />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-import { useState } from 'react';
-import Login from './pages/Login/Login';
-import CadastroFunc from './pages/CadastroFunc/cadastroF';
-import CadastroEmp from './pages/CadastroEmp/cadastroE';
-
-type Rota = 'login' | 'cadastroFunc' | 'cadastroEmp';
-
-
-export default function App() {
-  const [telaAtual, setTelaAtual] = useState<Rota>('login');
-
-  const navegarPara = (rota: string) => {
-    setTelaAtual(rota as Rota);
-    window.scrollTo(0, 0); 
-  };
-
-  return (
-    <>
-      {telaAtual === 'login' && <Login onNavigate={navegarPara} />}
-      {telaAtual === 'cadastroFunc' && <CadastroFunc onNavigate={navegarPara} />}
-      {telaAtual === 'cadastroEmp' && <CadastroEmp onNavigate={navegarPara} />}
-    </>
   );
 }

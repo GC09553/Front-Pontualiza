@@ -2,6 +2,7 @@ import './style.css';
 import ColunaEsquerda from '../../components/ColunaEsq';
 import FormularioFunc from '../../components/FormFunc';
 
+
 interface CadastroFuncProps {
   onNavigate?: (rota: string) => void;
 }

@@ -4,10 +4,12 @@
     "outDir": "./dist",
 
     "target": "ES2020",
-    "module": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "lib": ["ES2023", "DOM"],
-    "types": [],
     "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
@@ -18,9 +20,9 @@
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection":"force",
-    "skipLibCheck":true,
+
+    "moduleDetection": "force",
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"]

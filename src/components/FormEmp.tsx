@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './FormEmp.css';
 
 interface FormEmpProps {
-  onNavigate?: (rota: string) => void;
+  onNavigate?: (rota: string) => void | undefined;
 }
 
 export default function FormEmp({ onNavigate }: FormEmpProps) {

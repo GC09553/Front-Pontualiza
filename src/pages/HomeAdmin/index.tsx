@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
-import { Sidebar } from '../../components/Sidebar';
-import type { MenuItem } from '../../components/Sidebar';
+import { Sidebar } from '../../components/Sidebar/index';
+import type { MenuItem } from '../../components/Sidebar/index';
 import { Navbar } from '../../components/Navbar';
-import { Button } from '../../components/Button';
+import { Button } from '../../components/Button/index';
 import {
   LayoutGrid,
   Users,
@@ -400,11 +400,11 @@ export function HomeAdmin() {
           </section>
 
           <footer className="admin-footer">
-            <span>© 2026 Pontualiza · Eficiência em foco</span>
+            <span>©️ 2026 Pontualiza · Eficiência em foco</span>
             <span>Privacidade e segurança</span>
           </footer>
-    </main>
-    </div>
+        </main>
+      </div>
     </div>
   );
 }

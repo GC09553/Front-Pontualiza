@@ -3,10 +3,10 @@ import CalendarView from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './styles.css';
 
-import { Sidebar } from '../../components/Sidebar';
-import type { MenuItem } from '../../components/Sidebar';
+import { Sidebar } from '../../components/Sidebar/index';
+import type { MenuItem } from '../../components/Sidebar/index';
 import { Navbar } from '../../components/Navbar';
-import { Button } from '../../components/Button';
+import { Button } from '../../components/Button/index';
 import { 
   Home as HomeIcon, Clock, Calendar, FileText, 
   UserRound, LogIn, LogOut 

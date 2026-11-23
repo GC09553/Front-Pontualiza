@@ -1,22 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.js'
+import App from './App.tsx'
 
-const container = document.getElementById('app')
+const container = document.getElementById('root') || document.getElementById('app')
 
 if (!container) {
-  throw new Error('Root element #app was not found')
+  throw new Error('Root element #root or #app was not found')
 }
 
-const root = ReactDOM.createRoot(container)
-
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-import { App } from './App'
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(container).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

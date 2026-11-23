@@ -1,12 +1,25 @@
 import './FormFunc.css';
 
 interface FormularioFuncProps {
-  onNavigate?: (rota: string) => void;
+  onNavigate?: ((rota: string) => void) | undefined;
 }
 
 export default function FormularioFunc({ onNavigate }: FormularioFuncProps) {
   return (
     <main className="coluna-direita">
+      <div className="barra-superior-emp">
+        <a
+          href="#login"
+          className="link-voltar"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate('login');
+          }}
+        >
+          ← Voltar ao portal
+        </a>
+      </div>
+
       <div className="topo-formulario">
         <span className="bolinha-topo"></span>
         <span className="badge-topo">ATIVAÇÃO POR CONVITE AUTORIZADO</span>
@@ -85,7 +98,7 @@ export default function FormularioFunc({ onNavigate }: FormularioFuncProps) {
         >
           Entrar
         </a>
-        <small>© 2026 Pontualiza · Privacidade e segurança</small>
+        <small>©️ 2026 Pontualiza · Privacidade e segurança</small>
       </footer>
     </main>
   );

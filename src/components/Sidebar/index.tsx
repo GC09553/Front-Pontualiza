@@ -24,9 +24,9 @@ export function Sidebar({ itens, onSair }: SidebarProps) {
 
       <ul className="menu-lista">
         {itens.map((item, index) => (
-          <li 
-            key={index} 
-            className={item.ativo ? 'ativo' : ''} 
+          <li
+            key={index}
+            className={item.ativo ? 'ativo' : ''}
             onClick={item.onClick}
           >
             {item.icon}

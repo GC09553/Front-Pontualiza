@@ -8,6 +8,29 @@
   justify-content: flex-start;
 }
 
+.barra-superior-emp {
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.link-voltar {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.link-voltar:hover {
+  color: #0077b6;
+}
+
 .topo-formulario {
   width: 100%;
   max-width: 620px;
