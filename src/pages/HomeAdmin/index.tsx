@@ -6,6 +6,16 @@ import { Sidebar } from '../../components/Sidebar/index';
 import type { MenuItem } from '../../components/Sidebar/index';
 import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Button/index';
+import { MetricasAdmin, type MetricasAdminData } from '../../components/MetricasAdmin';
+import {
+  FrequenciaAlertaAdmin,
+  type FrequenciaAdminData,
+  type AlertaAdmin,
+} from '../../components/FrequenciaAlertaAdmin';
+import {
+  RegistrosRecentesAdmin,
+  type RegistroAdmin,
+} from '../../components/RegistrosRecentesAdmin';
 import {
   LayoutGrid,
   Users,
@@ -15,26 +25,7 @@ import {
   Settings,
   UserPlus,
   FileSpreadsheet,
-  AlertCircle,
-  ClockAlert,
 } from 'lucide-react';
-
-interface RegistroAdmin {
-  id: number | string;
-  funcionario: string;
-  setor: string;
-  entrada: string;
-  saida: string;
-  situacao: string;
-  horas: string;
-}
-
-interface AlertaAdmin {
-  id: number | string;
-  titulo: string;
-  descricao: string;
-  severidade?: string;
-}
 
 export function HomeAdmin() {
   const navigate = useNavigate();
@@ -44,7 +35,7 @@ export function HomeAdmin() {
     cargo: '',
   });
 
-  const [metricas, setMetricas] = useState({
+  const [metricas, setMetricas] = useState<MetricasAdminData>({
     totalFuncionarios: '-',
     ativos: '-',
     afastados: '-',
@@ -57,7 +48,7 @@ export function HomeAdmin() {
     horasExtrasHoje: '-',
   });
 
-  const [frequencia, setFrequencia] = useState({
+  const [frequencia, setFrequencia] = useState<FrequenciaAdminData>({
     dataReferencia: '',
     atualizadoEm: '',
     origem: '',
@@ -120,18 +111,6 @@ export function HomeAdmin() {
     carregarDadosAdmin();
   }, [carregarDadosAdmin]);
 
-  const totalFrequencia =
-    Number(frequencia.presentes || 0) +
-    Number(frequencia.atrasos || 0) +
-    Number(frequencia.faltas || 0);
-
-  const larguraPresentes =
-    totalFrequencia > 0 ? `${(Number(frequencia.presentes) / totalFrequencia) * 100}%` : '0%';
-  const larguraAtrasos =
-    totalFrequencia > 0 ? `${(Number(frequencia.atrasos) / totalFrequencia) * 100}%` : '0%';
-  const larguraFaltas =
-    totalFrequencia > 0 ? `${(Number(frequencia.faltas) / totalFrequencia) * 100}%` : '0%';
-
   const primeiroNome = admin.nome ? admin.nome.split(' ')[0] : 'Admin';
 
   return (
@@ -176,228 +155,23 @@ export function HomeAdmin() {
             </div>
           </div>
 
-          <section className="metricas-grid">
-            <div className="card metric-card">
-              <div className="metric-header">
-                <span>Funcionários</span>
-                <span className="status-dot dot-azul"></span>
-              </div>
-              <strong className="metric-valor">
-                {carregando ? '...' : metricas.totalFuncionarios}
-              </strong>
-              <span className="metric-sub">
-                {carregando ? '-' : `${metricas.ativos} ativos · ${metricas.afastados} afastados`}
-              </span>
-            </div>
+          <MetricasAdmin metricas={metricas} carregando={carregando} />
 
-            <div className="card metric-card">
-              <div className="metric-header">
-                <span>Presentes hoje</span>
-                <span className="status-dot dot-verde-metric"></span>
-              </div>
-              <strong className="metric-valor">
-                {carregando ? '...' : metricas.presentesHoje}
-              </strong>
-              <span className="metric-sub">
-                {carregando ? '-' : `${metricas.percentualPresentes} da equipe`}
-              </span>
-            </div>
+          <FrequenciaAlertaAdmin
+        frequencia={frequencia}
+        alertas={alertas}
+        carregando={carregando}
 
-            <div className="card metric-card">
-              <div className="metric-header">
-                <span>Faltas e atrasos</span>
-                <span className="status-dot dot-amarelo"></span>
-              </div>
-              <strong className="metric-valor">
-                {carregando ? '...' : metricas.faltasEAtrasos}
-              </strong>
-              <span className="metric-sub">
-                {carregando ? '-' : `${metricas.totalFaltas} faltas · ${metricas.totalAtrasos} atrasos`}
-              </span>
-            </div>
+        />
 
-            <div className="card metric-card">
-              <div className="metric-header">
-                <span>Horas trabalhadas</span>
-                <span className="status-dot dot-azul"></span>
-              </div>
-              <strong className="metric-valor">
-                {carregando ? '...' : metricas.horasTrabalhadas}
-              </strong>
-              <span className="metric-sub">
-                {carregando ? '-' : metricas.horasExtrasHoje}
-              </span>
-            </div>
-          </section>
-
-          <section className="meio-grid">
-            <div className="card frequencia-card">
-              <div className="bloco-header">
-                <h3>Frequência de hoje</h3>
-                <span className="data-referencia">{frequencia.dataReferencia || '-'}</span>
-              </div>
-
-              <div className="barra-frequencia">
-                <div className="barra-segmento seg-presentes" style={{ width: larguraPresentes }} />
-                <div className="barra-segmento seg-atrasos" style={{ width: larguraAtrasos }} />
-                <div className="barra-segmento seg-faltas" style={{ width: larguraFaltas }} />
-              </div>
-
-              <div className="legenda-frequencia">
-                <div className="legenda-item">
-                  <span className="status-dot dot-verde-metric"></span>
-                  <span>Presentes</span>
-                  <strong>
-                    {carregando ? '-' : `${frequencia.presentes} · ${frequencia.percentualPresentes}%`}
-                  </strong>
-                </div>
-
-                <div className="legenda-item">
-                  <span className="status-dot dot-amarelo"></span>
-                  <span>Atrasos</span>
-                  <strong>
-                    {carregando ? '-' : `${frequencia.atrasos} · ${frequencia.percentualAtrasos}%`}
-                  </strong>
-                </div>
-
-                <div className="legenda-item">
-                  <span className="status-dot dot-vermelho"></span>
-                  <span>Faltas</span>
-                  <strong>
-                    {carregando ? '-' : `${frequencia.faltas} · ${frequencia.percentualFaltas}%`}
-                  </strong>
-                </div>
-              </div>
-
-              <p className="rodape-info">
-                {[frequencia.atualizadoEm, frequencia.origem].filter(Boolean).join(' · ') || '-'}
-              </p>
-            </div>
-
-            <div className="card alertas-card">
-              <div className="bloco-header">
-                <h3>Alertas e pendências</h3>
-                <span className="alertas-count">{alertas.length}</span>
-              </div>
-
-              <div className="alertas-lista">
-                {carregando ? (
-                  <span className="rodape-info">Carregando alertas...</span>
-                ) : alertas.length === 0 ? (
-                  <span className="rodape-info">Nenhum alerta no momento.</span>
-                ) : (
-                  alertas.map((alerta) => {
-                    const isCritico = alerta.severidade === 'critico';
-                    return (
-                      <div
-                        key={alerta.id}
-                        className={`alerta-item ${isCritico ? 'alerta-vermelho' : 'alerta-amarelo'}`}
-                      >
-                        {isCritico ? (
-                          <AlertCircle size={16} className="alerta-icone-vermelho" />
-                        ) : (
-                          <ClockAlert size={16} className="alerta-icone-amarelo" />
-                        )}
-                        <div>
-                          <strong>{alerta.titulo}</strong>
-                          <span>{alerta.descricao}</span>
-                        </div>
-                      </div>
-                    );
-                  })
-                )}
-              </div>
-            </div>
-          </section>
-
-          <section className="card tabela-admin-card">
-            <div className="tabela-topo">
-              <h3>Registros recentes</h3>
-
-              <div className="filtros-grupo">
-                <select
-                  aria-label="Filtrar por setor"
-                  value={filtroSetor}
-                  onChange={(e) => setFiltroSetor(e.target.value)}
-                  className="filtro-select"
-                >
-                  <option value="Todos">Setor: Todos</option>
-                  <option value="Design">Design</option>
-                  <option value="Comercial">Comercial</option>
-                  <option value="Financeiro">Financeiro</option>
-                  <option value="Operações">Operações</option>
-                </select>
-
-                <select
-                  aria-label="Filtrar por situação"
-                  value={filtroSituacao}
-                  onChange={(e) => setFiltroSituacao(e.target.value)}
-                  className="filtro-select"
-                >
-                  <option value="Todos">Situação: Todos</option>
-                  <option value="Pontual">Pontual</option>
-                  <option value="Atraso">Atraso</option>
-                  <option value="Falta">Falta</option>
-                </select>
-
-                <a href="#todos-registros" className="link-ver-todos">
-                  Ver todos →
-                </a>
-              </div>
-            </div>
-
-            <div className="tabela-responsiva">
-              <table className="admin-table">
-                <thead>
-                  <tr>
-                    <th>Funcionário</th>
-                    <th>Setor</th>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                    <th>Situação</th>
-                    <th>Horas</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {carregando ? (
-                    <tr>
-                      <td colSpan={6} className="tabela-vazia">
-                        Carregando registros...
-                      </td>
-                    </tr>
-                  ) : registros.length === 0 ? (
-                    <tr>
-                      <td colSpan={6} className="tabela-vazia">
-                        Nenhum registro encontrado.
-                      </td>
-                    </tr>
-                  ) : (
-                    registros.map((item) => {
-                      const classeBadge = item.situacao
-                        .toLowerCase()
-                        .normalize('NFD')
-                        .replace(/[\u0300-\u036f]/g, '');
-
-                      return (
-                        <tr key={item.id}>
-                          <td className="col-nome">{item.funcionario}</td>
-                          <td>{item.setor}</td>
-                          <td>{item.entrada}</td>
-                          <td>{item.saida}</td>
-                          <td>
-                            <span className={`badge-situacao badge-${classeBadge}`}>
-                              {item.situacao}
-                            </span>
-                          </td>
-                          <td>{item.horas}</td>
-                        </tr>
-                      );
-                    })
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </section>
+          <RegistrosRecentesAdmin
+            registros={registros}
+            filtroSetor={filtroSetor}
+            filtroSituacao={filtroSituacao}
+            carregando={carregando}
+            onChangeSetor={setFiltroSetor}
+            onChangeSituacao={setFiltroSituacao}
+          />
 
           <footer className="admin-footer">
             <span>©️ 2026 Pontualiza · Eficiência em foco</span>

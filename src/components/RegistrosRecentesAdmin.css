@@ -1,0 +1,99 @@
+.tabela-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tabela-topo h3 {
+  font-size: 15px;
+  color: #111827;
+}
+
+.filtros-grupo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filtro-select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.link-ver-todos {
+  color: #1e6bb8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.tabela-responsiva {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 580px;
+}
+
+.admin-table th {
+  text-align: left;
+  color: #9ca3af;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+
+.col-nome {
+  font-weight: 600;
+  color: #111827 !important;
+}
+
+.badge-situacao {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-pontual {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-atraso {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.badge-falta {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.tabela-vazia {
+  text-align: center;
+  color: #9ca3af;
+  padding: 20px !important;
+}

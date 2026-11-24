@@ -12,15 +12,37 @@
   width: 100%;
 }
 
+/* Mantém a sidebar fixa na lateral no desktop sem alterar o layout interno */
+@media (min-width: 901px) {
+  .app-container > aside.barralat {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 30;
+  }
+}
+
 .conteudo-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
   width: 100%;
+  margin-left: 170px;
+}
+
+/* Mantém a barra superior fixa no topo ao rolar */
+.conteudo-wrapper > :first-child {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .main-content {
+  flex: 1;
   padding: 25px 30px;
   max-width: 1200px;
   width: 100%;
@@ -55,208 +77,16 @@
   width: 100%;
 }
 
-.col-esquerda {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
+@media (max-width: 900px) {
+  .conteudo-wrapper {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding-bottom: 100px;
+  }
 }
 
-.card-ponto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.relogio-circulo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background-color: #eef5fc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.card-ponto h2 {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.card-ponto p {
-  font-size: 12px;
-  color: #6b7280;
-  margin-bottom: 16px;
-}
-
-.resumo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.card-mini {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 14px;
-}
-
-.mini-titulo {
-  font-size: 11px;
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.mini-valor {
-  font-size: 18px;
-  color: #111827;
-}
-
-.mini-data {
-  font-size: 10px;
-  color: #9ca3af;
-}
-
-.card-ultimo-registro {
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.dot-verde {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #28a745;
-  border-radius: 50%;
-  margin-right: 4px;
-}
-
-.card-ultimo-registro a,
-.tabela-header a,
-.tabela-footer a {
-  color: #1e6bb8;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.col-direita {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-.card-calendario-wrapper {
-  padding: 15px !important;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
-.react-calendar {
-  width: 100% !important;
-  max-width: 100% !important;
-  border: none !important;
-  background-color: transparent !important;
-  font-family: "Roboto", sans-serif !important;
-}
-
-.react-calendar__navigation {
-  margin-bottom: 15px !important;
-}
-
-.react-calendar__navigation button {
-  color: #111827 !important;
-  min-width: 32px;
-  background: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.react-calendar__month-view__weekdays {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 10px;
-  color: #9ca3af;
-  margin-bottom: 8px;
-}
-
-.react-calendar__tile {
-  padding: 8px 6px !important;
-  background: none;
-  text-align: center;
-  font-size: 12px;
-  color: #374151;
-  border-radius: 6px;
-}
-
-.react-calendar__tile--active {
-  background-color: #111827 !important;
-  color: white !important;
-  font-weight: bold;
-}
-
-.tabela-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.tabela-header h3 {
-  font-size: 15px;
-}
-
-.tabela-responsiva {
-  width: 100%;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  min-width: 450px;
-}
-
-th {
-  text-align: left;
-  color: #9ca3af;
-  font-weight: 500;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #f3f4f6;
-}
-
-td {
-  padding: 12px 0;
-  border-bottom: 1px solid #f3f4f6;
-  color: #374151;
-}
-
-.badge {
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.tabela-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 14px;
-  font-size: 12px;
-  color: #9ca3af;
-}
 @media (min-width: 1400px) {
   .dashboard-grid {
     display: grid;
@@ -266,9 +96,6 @@ td {
 }
 
 @media (max-width: 480px) {
-  .resumo-grid {
-    grid-template-columns: 1fr;
-  }
   .saudacao h1 {
     font-size: 20px;
   }

@@ -1,0 +1,95 @@
+.col-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.card-ponto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.relogio-circulo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #eef5fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.card-ponto h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.card-ponto p {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.resumo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+}
+
+.mini-titulo {
+  font-size: 11px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mini-valor {
+  font-size: 18px;
+  color: #111827;
+}
+
+.mini-data {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.card-ultimo-registro {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dot-verde {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.card-ultimo-registro a {
+  color: #1e6bb8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .resumo-grid {
+    grid-template-columns: 1fr;
+  }
+}
