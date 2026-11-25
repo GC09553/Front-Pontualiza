@@ -1,5 +1,5 @@
 import './ColunaEsq.css';
-import LogoPontualiza from '../assets/logo.jpeg';
+import LogoPontualiza from '../../assets/logo.jpeg';
 
 interface ColunaEsquerdaProps {
   titulo: string;

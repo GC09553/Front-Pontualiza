@@ -1,5 +1,5 @@
-import ColunaEsq from '../../components/ColunaEsq';
-import FormLogin from '../../components/FormLogin';
+import ColunaEsq from '../../components/ColunaEsq/ColunaEsq';
+import FormLogin from '../../components/FormLogin/FormLogin';
 import './Login.css';
 
 interface LoginProps {

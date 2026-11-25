@@ -1,5 +1,5 @@
-import Button from './Button';
-import InfoIcon from './InfoIcon';
+import Button from '../Button/Button';
+import InfoIcon from '../InfoIcon/InfoIcon';
 
 type AccessCardProfile = 'employee' | 'company';
 

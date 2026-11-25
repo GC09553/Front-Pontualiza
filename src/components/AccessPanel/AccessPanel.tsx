@@ -1,7 +1,7 @@
-import AccessCard from './AccessCard';
-import AccessHeader from './AccessHeader';
-import PageFooter from './PageFooter';
-import SupportContact from './SupportContact';
+import AccessCard from '../AccessCard/AccessCard';
+import AccessHeader from '../AccessHeader/AccessHeader';
+import PageFooter from '../PageFooter/PageFooter';
+import SupportContact from '../SupportContact/SupportContact';
 
 export default function AccessPanel() {
   return (

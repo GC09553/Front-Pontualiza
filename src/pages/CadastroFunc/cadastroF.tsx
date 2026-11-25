@@ -1,6 +1,6 @@
 import './style.css';
-import ColunaEsquerda from '../../components/ColunaEsq';
-import FormularioFunc from '../../components/FormFunc';
+import ColunaEsquerda from '../../components/ColunaEsq/ColunaEsq';
+import FormularioFunc from '../../components/FormFunc/FormFunc';
 
 
 interface CadastroFuncProps {

@@ -1,6 +1,6 @@
 import './cadastroE.css';
-import ColunaEsq from '../../components/ColunaEsq';
-import FormEmp from '../../components/FormEmp';
+import ColunaEsq from '../../components/ColunaEsq/ColunaEsq';
+import FormEmp from '../../components/FormEmp/FormEmp';
 
 interface CadastroEmpProps {
   onNavigate?: (rota: string) => void;

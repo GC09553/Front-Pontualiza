@@ -4,11 +4,11 @@ import './styles.css';
 import { Sidebar } from '../../components/Sidebar/index';
 import type { MenuItem } from '../../components/Sidebar/index';
 import { Navbar } from '../../components/Navbar';
-import { PainelPontoFuncionario } from '../../components/PainelPontoFuncionario';
+import { PainelPontoFuncionario } from '../../components/PainelPontoFuncionario/PainelPontoFuncionario';
 import {
   HistoricoPontoFuncionario,
   type RegistroPonto,
-} from '../../components/HistoricoPontoFuncionario';
+} from '../../components/HistoricoPontoFuncionario/HistoricoPontoFuncionario';
 import {
   Home as HomeIcon,
   Clock,

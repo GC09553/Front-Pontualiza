@@ -1,5 +1,5 @@
-import AccessPanel from "../../../components/AccessPanel.js";
-import Sidebar from "../../../components/Sidebar.js";
+import AccessPanel from "../../../components/AccessPanel/AccessPanel";
+import Sidebar from "../../../components/Sidebar/Sidebar";
 /* import logoUrl from "./logo.jpeg";
 import './index.css'; */
 

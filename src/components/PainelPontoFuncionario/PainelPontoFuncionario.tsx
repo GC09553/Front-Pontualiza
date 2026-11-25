@@ -1,5 +1,5 @@
 import { Clock, LogIn, LogOut, Calendar } from 'lucide-react';
-import { Button } from './Button/index';
+import { Button } from '../Button/index';
 import './PainelPontoFuncionario.css'
 
 interface ResumoPonto {

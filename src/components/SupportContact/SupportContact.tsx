@@ -1,4 +1,4 @@
-import InfoIcon from './InfoIcon';
+import InfoIcon from '../InfoIcon/InfoIcon';
 
 export default function SupportContact() {
   return (

@@ -6,16 +6,16 @@ import { Sidebar } from '../../components/Sidebar/index';
 import type { MenuItem } from '../../components/Sidebar/index';
 import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Button/index';
-import { MetricasAdmin, type MetricasAdminData } from '../../components/MetricasAdmin';
+import { MetricasAdmin, type MetricasAdminData } from '../../components/MetricasAdmin/MetricasAdmin';
 import {
   FrequenciaAlertaAdmin,
   type FrequenciaAdminData,
   type AlertaAdmin,
-} from '../../components/FrequenciaAlertaAdmin';
+} from '../../components/FrequenciaAlertaAdmin/FrequenciaAlertaAdmin';
 import {
   RegistrosRecentesAdmin,
   type RegistroAdmin,
-} from '../../components/RegistrosRecentesAdmin';
+} from '../../components/RegistrosRecentesAdmin/RegistrosRecentesAdmin';
 import {
   LayoutGrid,
   Users,
