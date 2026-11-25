@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from   'react-router-dom';
 import Login from './pages/Login/Login';
 import CadastroFunc from './pages/CadastroFunc/cadastroF';
 import CadastroEmp from './pages/CadastroEmp/cadastroE';
