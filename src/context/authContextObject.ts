@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import type { LoginData, LoginResponse } from "../types/auth.types";
 
-interface AuthContextData {
+export interface AuthContextData {
     user: LoginResponse['user'] | null;
     token: string | null;
     isAuthenticated: boolean;
