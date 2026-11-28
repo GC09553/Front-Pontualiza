@@ -100,11 +100,11 @@ export default function FormLogin({ onNavigate }: FormLoginProps) {
           </button>
         </div>
 
-        <div className="esqueci-senha-container">
+        {/* <div className="esqueci-senha-container">
           <a href="#recuperar-senha" className="link-verde">
             Esqueci minha senha
           </a>
-        </div>
+        </div> */}
 
         <button type="submit" className="btn-entrar">
           <span>Entrar</span>

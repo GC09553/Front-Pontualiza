@@ -114,13 +114,13 @@ export default function FormEmp({ onNavigate }: FormEmpProps) {
             Use letras maiúsculas, minúsculas, números e um caractere especial.
           </small>
 
-          <label className="checkbox-termos">
+          {/* <label className="checkbox-termos">
             <input type="checkbox" />
             <span>
               Li e aceito os <a href="#">Termos de uso</a> e a{' '}
               <a href="#">Política de privacidade</a> da Pontualiza.
             </span>
-          </label>
+          </label> */}
 
           <button type="button" className="btn-cadastrar-emp">
             <span>Cadastrar empresa e administrador</span>
